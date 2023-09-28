@@ -2,7 +2,7 @@
 
 # sealion-walk
 
-Flow Cadence AST walker module for cadence compatible trees. The solution is based on [https://github.com/acornjs/acorn/tree/master/acorn-walk acorn-walk], with the aim of providing a similar API.
+Flow Cadence AST walker module for cadence compatible trees. The solution is based on [acorn-walk](https://github.com/acornjs/acorn/tree/master/acorn-walk ), with the aim of providing a similar API.
 
 ## Development
 
