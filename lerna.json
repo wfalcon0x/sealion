@@ -1,0 +1,25 @@
+{
+  "packages": [
+    "packages/*"
+  ],
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+  "npmClientArgs": ["--production", "--no-optional"],
+  "version": "0.0.1",
+  "command": {
+    "publish": {
+      "allowBranch": [
+        "main",
+        "dev",
+        "fix/*",
+        "beta/*"
+      ],
+      "conventionalCommits": true,
+      "registry": "https://registry.npmjs.org/",
+      "message": "chore: bump versions after release",
+      "yes": true
+    }
+  },
+  "useNx": false
+}

@@ -1,0 +1,36 @@
+{
+  "name": "@wfalcon/sealion-walk",
+  "version": "0.0.1",
+  "description": "",
+  "license": "MIT",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig-build.json && tsc -p tsconfig-build.cjs.json && tsconfig-to-dual-package",
+    "clean": "rimraf ./dist",
+    "test": "node --experimental-vm-modules ./../../node_modules/jest/bin/jest.js --passWithNoTests --maxWorkers=1",
+    "verify": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "tsconfig-to-dual-package": "^1.2.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2"
+  }
+}
