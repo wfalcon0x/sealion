@@ -1,0 +1,79 @@
+{
+  "program": {
+    "Type": "Program",
+    "Declarations": [
+      {
+        "TypeParameterList": null,
+        "ParameterList": {
+          "Parameters": null,
+          "StartPos": {
+            "Offset": 12,
+            "Line": 1,
+            "Column": 12
+          },
+          "EndPos": {
+            "Offset": 13,
+            "Line": 1,
+            "Column": 13
+          }
+        },
+        "ReturnTypeAnnotation": null,
+        "FunctionBlock": {
+          "Block": {
+            "Statements": null,
+            "StartPos": {
+              "Offset": 15,
+              "Line": 1,
+              "Column": 15
+            },
+            "EndPos": {
+              "Offset": 16,
+              "Line": 1,
+              "Column": 16
+            },
+            "Type": "Block"
+          },
+          "Type": "FunctionBlock",
+          "StartPos": {
+            "Offset": 15,
+            "Line": 1,
+            "Column": 15
+          },
+          "EndPos": {
+            "Offset": 16,
+            "Line": 1,
+            "Column": 16
+          }
+        },
+        "DocString": "",
+        "Identifier": {
+          "Identifier": "main",
+          "StartPos": {
+            "Offset": 8,
+            "Line": 1,
+            "Column": 8
+          },
+          "EndPos": {
+            "Offset": 11,
+            "Line": 1,
+            "Column": 11
+          }
+        },
+        "Access": "AccessPublic",
+        "Type": "FunctionDeclaration",
+        "StartPos": {
+          "Offset": 0,
+          "Line": 1,
+          "Column": 0
+        },
+        "EndPos": {
+          "Offset": 16,
+          "Line": 1,
+          "Column": 16
+        },
+        "IsStatic": false,
+        "IsNative": false
+      }
+    ]
+  }
+}
