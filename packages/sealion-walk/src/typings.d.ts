@@ -16,14 +16,18 @@ export type AnyNode = any // TODO
 export type AggregateType = any // TODO
 
 export type SimpleVisitors<TState> = {
-  [type in AnyNode["type"]]?: (node: Extract<AnyNode, { type: type }>, state: TState) => void
+  [type in AnyNode['type']]?: (node: Extract<AnyNode, { type: type }>, state: TState) => void
 } & {
   [type in keyof AggregateType]?: (node: AggregateType[type], state: TState) => void
 }
 
 export type RecursiveVisitors<TState> = {
-  [type in AnyNode["type"]]?: ( node: Extract<AnyNode, { type: type }>, state: TState, callback: WalkerCallback<TState>) => void
-} &  {
+  [type in AnyNode['type']]?: (
+    node: Extract<AnyNode, { type: type }>,
+    state: TState,
+    callback: WalkerCallback<TState>,
+  ) => void
+} & {
   [type in keyof AggregateType]?: (node: AggregateType[type], state: TState, callback: WalkerCallback<TState>) => void
 }
 
@@ -40,7 +44,7 @@ export function simple<TState>(
   node: Node,
   visitors: SimpleVisitors<TState>,
   base?: RecursiveVisitors<TState>,
-  state?: TState
+  state?: TState,
 ): void
 
 export const base: RecursiveVisitors<any>

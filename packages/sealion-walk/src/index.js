@@ -4,7 +4,7 @@ const ignore = (_node, _st, _c) => {}
 const leafNode = ignore
 
 base.Program = base.CompositeMembers = base.InterfaceMembers = (node, st, c) => {
-  if(node.Declarations)
+  if (node.Declarations)
     for (let stmt of node.Declarations)
       c(stmt, st)
 }
@@ -14,17 +14,17 @@ base.Program = base.CompositeMembers = base.InterfaceMembers = (node, st, c) => 
 base.ImportDeclaration = leafNode
 
 base.TransactionDeclaration = (node, st, c) => {
-  c(node.ParameterList, st, "ParameterList")
+  c(node.ParameterList, st, 'ParameterList')
   for (let stmt of node.Fields)
     c(stmt, st)
-  c(node.Prepare, st, "SpecialFunctionDeclaration")
-  c(node.Execute, st, "SpecialFunctionDeclaration")
+  c(node.Prepare, st, 'SpecialFunctionDeclaration')
+  c(node.Execute, st, 'SpecialFunctionDeclaration')
 }
 
 base.ParameterList = (node, st, c) => {
-  if(node.Parameters)
+  if (node.Parameters)
     for (let stmt of node.Parameters)
-      c(stmt, st, "Parameter")
+      c(stmt, st, 'Parameter')
 }
 
 base.SpecialFunctionDeclaration = (node, st, c) => {
@@ -32,22 +32,22 @@ base.SpecialFunctionDeclaration = (node, st, c) => {
 }
 
 base.InterfaceDeclaration = (node, st, c) => {
-  c(node.Members, st, "InterfaceMembers")
+  c(node.Members, st, 'InterfaceMembers')
 }
 
 base.FieldDeclaration = base.Parameter = (node, st, c) => {
-  c(node.TypeAnnotation, st, "TypeAnnotation")
+  c(node.TypeAnnotation, st, 'TypeAnnotation')
 }
 
 base.CompositeDeclaration = (node, st, c) => {
-  c(node.Members, st, "CompositeMembers")
+  c(node.Members, st, 'CompositeMembers')
 }
 
 base.EnumCaseDeclaration = leafNode
 
 base.VariableDeclaration = (node, st, c) => {
   c(node.Value, st)
-  if(node.SecondValue)
+  if (node.SecondValue)
     c(node.SecondValue, st)
 }
 
@@ -57,19 +57,19 @@ base.Value = (node, st, c) => {
 }
 
 base.FunctionDeclaration = (node, st, c) => {
-  if(node.ParameterList)
-    c(node.ParameterList, st, "ParameterList")
-  if(node.FunctionBlock)
-    c(node.FunctionBlock, st, "FunctionBlock")
-  if(node.ReturnTypeAnnotation)
-    c(node.ReturnTypeAnnotation, st, "TypeAnnotation")
+  if (node.ParameterList)
+    c(node.ParameterList, st, 'ParameterList')
+  if (node.FunctionBlock)
+    c(node.FunctionBlock, st, 'FunctionBlock')
+  if (node.ReturnTypeAnnotation)
+    c(node.ReturnTypeAnnotation, st, 'TypeAnnotation')
 }
 
 base.FunctionBlock = (node, st, c) => {
   c(node.Block, st)
-  if(node.Preconditions)
+  if (node.Preconditions)
     for (let stmt of node.Preconditions)
-      c(stmt, st, "Precondition")
+      c(stmt, st, 'Precondition')
 }
 
 base.Precondition = (node, st, c) => {
@@ -78,7 +78,7 @@ base.Precondition = (node, st, c) => {
 }
 
 base.Block = (node, st, c) => {
-  if(node.Statements)
+  if (node.Statements)
     for (let stmt of node.Statements)
       c(stmt, st)
 }
@@ -98,7 +98,7 @@ base.WhileStatement = (node, st, c) => {
 base.IfStatement = (node, st, c) => {
   c(node.Test, st)
   c(node.Then, st)
-  if(node.Else)
+  if (node.Else)
     c(node.Else, st)
 }
 
@@ -112,7 +112,7 @@ base.ForStatement = (node, st, c) => {
 }
 
 base.ReturnStatement = (node, st, c) => {
-  if(node.Expression)
+  if (node.Expression)
     c(node.Expression, st)
 }
 
@@ -131,16 +131,16 @@ base.ExpressionStatement = base.ForceExpression = (node, st, c) => {
 // Expressions
 
 base.FunctionExpression = (node, st, c) => {
-  if(node.ParameterList)
-    c(node.ParameterList, st, "ParameterList")
-  if(node.FunctionBlock)
+  if (node.ParameterList)
+    c(node.ParameterList, st, 'ParameterList')
+  if (node.FunctionBlock)
     c(node.FunctionBlock, st)
-  if(node.ReturnTypeAnnotation)
-    c(node.ReturnTypeAnnotation, st, "TypeAnnotation")
+  if (node.ReturnTypeAnnotation)
+    c(node.ReturnTypeAnnotation, st, 'TypeAnnotation')
 }
 
 base.ArrayExpression = (node, st, c) => {
-  if(node.Values)
+  if (node.Values)
     for (let stmt of node.Values)
       c(stmt, st)
 }
@@ -168,8 +168,8 @@ base.UnaryExpression = (node, st, c) => {
 }
 
 base.DictionaryExpression = (node, st, c) => {
-  if(node.Entries)
-    for (let stmt of node.Entries)
+  if (node.Entries)
+    for (let stmt of node.Entries) //
       c(stmt, st)
 }
 
@@ -188,10 +188,10 @@ base.InvocationExpression = (node, st, c) => {
   c(node.InvokedExpression, st)
   if (node.TypeArguments)
     for (let stmt of node.TypeArguments)
-      c(stmt, st, "TypeAnnotation")
+      c(stmt, st, 'TypeAnnotation')
   if (node.Arguments)
     for (let stmt of node.Arguments)
-      c(stmt, st, "ExpressionStatement")
+      c(stmt, st, 'ExpressionStatement')
 }
 
 base.ReferenceExpression = (node, st, c) => {
@@ -213,7 +213,7 @@ base.IntegerExpression = leafNode
 
 base.CastingExpression = (node, st, c) => {
   c(node.Expression, st)
-  c(node.TypeAnnotation, st, "TypeAnnotation")
+  c(node.TypeAnnotation, st, 'TypeAnnotation')
 }
 
 base.IndexExpression = (node, st, c) => {
@@ -228,11 +228,11 @@ base.TypeAnnotation = (node, st, c) => {
 }
 
 base.FunctionType = (node, st, c) => {
-  if(node.ReturnTypeAnnotation)
-    c(node.ReturnTypeAnnotation, st, "TypeAnnotation")
-  if(node.ParameterTypeAnnotations)
+  if (node.ReturnTypeAnnotation)
+    c(node.ReturnTypeAnnotation, st, 'TypeAnnotation')
+  if (node.ParameterTypeAnnotations)
     for (let stmt of node.ParameterTypeAnnotations)
-      c(stmt, st, "TypeAnnotation")
+      c(stmt, st, 'TypeAnnotation')
 }
 
 base.OptionalType = (node, st, c) => {
@@ -240,11 +240,11 @@ base.OptionalType = (node, st, c) => {
 }
 
 base.InstantiationType = (node, st, c) => {
-  if (node.InstantiatedType)
+  if (node.InstantiatedType) //
     c(node.InstantiatedType, st)
   if (node.TypeArguments)
     for (let stmt of node.TypeArguments)
-      c(stmt, st, "TypeAnnotation")
+      c(stmt, st, 'TypeAnnotation')
 }
 
 base.VariableSizedType = (node, st, c) => {
@@ -258,7 +258,7 @@ base.ReferenceType = (node, st, c) => {
 }
 
 base.RestrictedType = (node, st, c) => {
-  if(node.RestrictedType)
+  if (node.RestrictedType)
     c(node.RestrictedType, st)
   for (let stmt of node.Restrictions)
     c(stmt, st)
@@ -278,7 +278,7 @@ export function simple(node, visitors, baseVisitor, state, override) {
   if (!baseVisitor) baseVisitor = base
   ;(function c(node, st, override) {
     let type = override || node.Type,
-    found = visitors[type]
+      found = visitors[type]
     baseVisitor[type](node, st, c)
     if (found) found(node, st)
   })(node, state, override)
