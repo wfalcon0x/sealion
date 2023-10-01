@@ -124,7 +124,12 @@ base.ContinueStatement = leafNode
 
 base.BreakStatement = leafNode
 
-base.ExpressionStatement = base.ForceExpression = (node, st, c) => {
+base.SwapStatement = (node, st, c) => {
+  c(node.Left, st)
+  c(node.Right, st)
+}
+
+base.ExpressionStatement = (node, st, c) => {
   c(node.Expression, st)
 }
 
@@ -146,6 +151,10 @@ base.ArrayExpression = (node, st, c) => {
 }
 
 base.MemberExpression = (node, st, c) => {
+  c(node.Expression, st)
+}
+
+base.ForceExpression = (node, st, c) => {
   c(node.Expression, st)
 }
 
