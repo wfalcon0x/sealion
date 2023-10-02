@@ -1,0 +1,68 @@
+{
+  "Type": "SwitchStatement",
+  "Expression": {
+      "Type": "IdentifierExpression",
+      "Identifier": {
+          "Identifier": "foo",
+          "StartPos": {"Offset": 1, "Line": 2, "Column": 3},
+          "EndPos": {"Offset": 3, "Line": 2, "Column": 5}
+      },
+      "StartPos": {"Offset": 1, "Line": 2, "Column": 3},
+      "EndPos": {"Offset": 3, "Line": 2, "Column": 5}
+  },
+  "Cases": [
+      {
+          "Type": "SwitchCase",
+          "Expression": {
+              "Type": "BoolExpression",
+              "Value": false,
+              "StartPos": {"Offset": 4, "Line": 5, "Column": 6},
+              "EndPos": {"Offset": 7, "Line": 8, "Column": 9}
+          },
+          "Statements": [
+              {
+                  "Type": "ExpressionStatement",
+                  "StartPos": {"Offset": 10, "Line": 11, "Column": 12},
+                  "EndPos": {"Offset": 12, "Line": 11, "Column": 14},
+                  "Expression": {
+                      "Type": "IdentifierExpression",
+                      "Identifier": {
+                          "Identifier": "bar",
+                          "StartPos": {"Offset": 10, "Line": 11, "Column": 12},
+                          "EndPos": {"Offset": 12, "Line": 11, "Column": 14}
+                      },
+                      "StartPos": {"Offset": 10, "Line": 11, "Column": 12},
+                      "EndPos": {"Offset": 12, "Line": 11, "Column": 14}
+                  }
+              }
+          ],
+          "StartPos": {"Offset": 13, "Line": 14, "Column": 15},
+          "EndPos": {"Offset": 16, "Line": 17, "Column": 18}
+      },
+      {
+          "Type": "SwitchCase",
+          "Expression": null,
+          "Statements": [
+              {
+                  "Type": "ExpressionStatement",
+                  "StartPos": {"Offset": 19, "Line": 20, "Column": 21},
+                  "EndPos": {"Offset": 21, "Line": 20, "Column": 23},
+                  "Expression": {
+                      "Type": "IdentifierExpression",
+                      "Identifier": {
+                          "Identifier": "baz",
+                          "StartPos": {"Offset": 19, "Line": 20, "Column": 21},
+                          "EndPos": {"Offset": 21, "Line": 20, "Column": 23}
+                      },
+                      "StartPos": {"Offset": 19, "Line": 20, "Column": 21},
+                      "EndPos": {"Offset": 21, "Line": 20, "Column": 23}
+                  }
+              }
+          ],
+          "StartPos": {"Offset": 22, "Line": 23, "Column": 24},
+          "EndPos": {"Offset": 25, "Line": 26, "Column": 27}
+      }
+  ],
+  "StartPos": {"Offset": 28, "Line": 29, "Column": 30},
+  "EndPos": {"Offset": 31, "Line": 32, "Column": 33}
+}

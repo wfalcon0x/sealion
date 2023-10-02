@@ -1,0 +1,54 @@
+{
+  "Type": "EmitStatement",
+  "InvocationExpression": {
+      "Type": "InvocationExpression",
+      "InvokedExpression": {
+         "Type": "IdentifierExpression",
+         "Identifier": {
+             "Identifier": "foobar",
+             "StartPos": {"Offset": 1, "Line": 2, "Column": 3},
+             "EndPos": {"Offset": 6, "Line": 2, "Column": 8}
+         },
+         "StartPos": {"Offset": 1, "Line": 2, "Column": 3},
+         "EndPos": {"Offset": 6, "Line": 2, "Column": 8}
+      },
+      "TypeArguments": [
+          {
+             "IsResource": true,
+             "AnnotatedType": {
+                 "Type": "NominalType",
+                 "Identifier": {
+                     "Identifier": "AB",
+                     "StartPos": {"Offset": 4, "Line": 5, "Column": 6},
+                     "EndPos": {"Offset": 5, "Line": 5, "Column": 7}
+                 },
+                 "StartPos": {"Offset": 4, "Line": 5, "Column": 6},
+                 "EndPos": {"Offset": 5, "Line": 5, "Column": 7}
+             },
+             "StartPos": {"Offset": 7, "Line": 8, "Column": 9},
+             "EndPos": {"Offset": 5, "Line": 5, "Column": 7}
+          }
+      ],
+      "Arguments": [
+          {
+              "Label": "ok",
+              "LabelStartPos": {"Offset": 10, "Line": 11, "Column": 12},
+              "LabelEndPos": {"Offset": 13, "Line": 14, "Column": 15},
+              "Expression": {
+                  "Type": "BoolExpression",
+                  "Value": false,
+                  "StartPos": {"Offset": 16, "Line": 17, "Column": 18},
+                  "EndPos": {"Offset": 19, "Line": 20, "Column": 21}
+              },
+              "TrailingSeparatorPos": {"Offset": 28, "Line": 29, "Column": 30},
+              "StartPos": {"Offset": 10, "Line": 11, "Column": 12},
+              "EndPos": {"Offset": 19, "Line": 20, "Column": 21}
+          }
+      ],
+      "ArgumentsStartPos": {"Offset": 31, "Line": 32, "Column": 33},
+      "StartPos": {"Offset": 1, "Line": 2, "Column": 3},
+      "EndPos": {"Offset": 22, "Line": 23, "Column": 24}
+  },
+  "StartPos": {"Offset": 25, "Line": 26, "Column": 27},
+  "EndPos": {"Offset": 22, "Line": 23, "Column": 24}
+}
