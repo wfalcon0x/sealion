@@ -1,0 +1,33 @@
+{
+  "Type": "AttachExpression",
+  "StartPos": {"Offset": 1, "Line": 2, "Column": 3},
+  "EndPos": {"Offset": 3, "Line": 2, "Column": 5},
+  "Base":  {
+      "Type": "IdentifierExpression",
+      "Identifier": {
+          "Identifier": "foo",
+          "StartPos": {"Offset": 1, "Line": 2, "Column": 3},
+          "EndPos": {"Offset": 3, "Line": 2, "Column": 5}
+      },
+      "StartPos": {"Offset": 1, "Line": 2, "Column": 3},
+      "EndPos": {"Offset": 3, "Line": 2, "Column": 5}
+  },
+  "Attachment": {
+      "Type": "InvocationExpression",
+      "InvokedExpression": {
+          "Type": "IdentifierExpression",
+          "Identifier": {
+              "Identifier": "bar",
+              "StartPos": {"Offset": 1, "Line": 2, "Column": 3},
+              "EndPos": {"Offset": 3, "Line": 2, "Column": 5}
+          },
+          "StartPos": {"Offset": 1, "Line": 2, "Column": 3},
+          "EndPos": {"Offset": 3, "Line": 2, "Column": 5}
+      },
+      "Arguments":[],
+      "TypeArguments":[],
+      "StartPos": {"Offset": 1, "Line": 2, "Column": 3},
+      "ArgumentsStartPos": {"Offset": 1, "Line": 2, "Column": 3},
+      "EndPos": {"Offset": 1, "Line": 2, "Column": 3}
+  }
+}

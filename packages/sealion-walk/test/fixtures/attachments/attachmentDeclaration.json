@@ -1,0 +1,37 @@
+{
+  "Type": "AttachmentDeclaration",
+  "Access": "AccessPublic",
+  "StartPos": {"Offset": 1, "Line": 2, "Column": 3},
+  "EndPos": {"Offset": 4, "Line": 5, "Column": 6},
+  "Identifier": {
+      "Identifier": "Foo",
+      "StartPos": {"Offset": 1, "Line": 2, "Column": 3},
+      "EndPos": {"Offset": 3, "Line": 2, "Column": 5}
+  },
+  "BaseType": {
+      "Type": "NominalType",
+      "Identifier": {
+          "Identifier": "Bar",
+          "StartPos": {"Offset": 1, "Line": 2, "Column": 3},
+          "EndPos": {"Offset": 3, "Line": 2, "Column": 5}
+      },
+      "StartPos": {"Offset": 1, "Line": 2, "Column": 3},
+      "EndPos": {"Offset": 3, "Line": 2, "Column": 5}
+  },
+  "DocString": "test",
+  "Conformances": [
+      {
+          "Type": "NominalType",
+          "Identifier": {
+              "Identifier": "Baz",
+              "StartPos": {"Offset": 1, "Line": 2, "Column": 3},
+              "EndPos": {"Offset": 3, "Line": 2, "Column": 5}
+          },
+          "StartPos": {"Offset": 1, "Line": 2, "Column": 3},
+          "EndPos": {"Offset": 3, "Line": 2, "Column": 5}
+      }
+  ],
+  "Members": {
+      "Declarations": []
+  }
+}

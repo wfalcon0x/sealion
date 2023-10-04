@@ -3,7 +3,7 @@ export const base = {}
 const ignore = (_node, _st, _c) => {}
 const leafNode = ignore
 
-base.Program = base.CompositeMembers = base.InterfaceMembers = (node, st, c) => {
+base.Program = base.CompositeMembers = base.InterfaceMembers = base.AttachmentMembers = (node, st, c) => {
   if (node.Declarations)
     for (let stmt of node.Declarations)
       c(stmt, st)
@@ -41,6 +41,14 @@ base.FieldDeclaration = base.Parameter = (node, st, c) => {
 
 base.CompositeDeclaration = (node, st, c) => {
   c(node.Members, st, 'CompositeMembers')
+}
+
+base.AttachmentDeclaration = (node, st, c) => {
+  c(node.BaseType, st)
+  if (node.Conformances)
+    for (let stmt of node.Conformances)
+      c(stmt, st)
+  c(node.Members, st, 'AttachmentMembers')
 }
 
 base.EnumCaseDeclaration = leafNode
@@ -131,6 +139,11 @@ base.SwapStatement = (node, st, c) => {
 
 base.ExpressionStatement = (node, st, c) => {
   c(node.Expression, st)
+}
+
+base.RemoveStatement = (node, st, c) => {
+  c(node.Value, st)
+  c(node.Attachment, st)
 }
 
 // Expressions
@@ -228,6 +241,11 @@ base.CastingExpression = (node, st, c) => {
 base.IndexExpression = (node, st, c) => {
   c(node.TargetExpression, st)
   c(node.IndexingExpression, st)
+}
+
+base.AttachExpression = (node, st, c) => {
+  c(node.Base, st)
+  c(node.Attachment, st)
 }
 
 // Types
