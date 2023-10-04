@@ -206,6 +206,8 @@ base.BoolExpression = leafNode
 
 base.NilExpression = leafNode
 
+base.VoidExpression = leafNode
+
 base.InvocationExpression = (node, st, c) => {
   c(node.InvokedExpression, st)
   if (node.TypeArguments)
