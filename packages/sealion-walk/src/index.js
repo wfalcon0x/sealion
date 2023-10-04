@@ -51,6 +51,10 @@ base.AttachmentDeclaration = (node, st, c) => {
   c(node.Members, st, 'AttachmentMembers')
 }
 
+base.PragmaDeclaration = (node, st, c) => {
+  c(node.Expression, st)
+}
+
 base.EnumCaseDeclaration = leafNode
 
 base.VariableDeclaration = (node, st, c) => {

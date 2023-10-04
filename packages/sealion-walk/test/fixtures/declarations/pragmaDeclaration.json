@@ -1,0 +1,11 @@
+{
+  "Type": "PragmaDeclaration",
+  "Expression": {
+      "Type": "BoolExpression",
+      "Value": false,
+      "StartPos": {"Offset": 1, "Line": 2, "Column": 3},
+      "EndPos": {"Offset": 4, "Line": 5, "Column": 6}
+  },
+  "StartPos": {"Offset": 7, "Line": 8, "Column": 9},
+  "EndPos": {"Offset": 10, "Line": 11, "Column": 12}
+}
