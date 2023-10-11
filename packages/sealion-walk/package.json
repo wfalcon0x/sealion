@@ -32,5 +32,9 @@
     "tsconfig-to-dual-package": "^1.2.0",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2"
+  },
+  "gitHead": "3bc1068ca4ed1e7a01426aec3630d1eca2715a99",
+  "publishConfig": {
+    "access": "public"
   }
 }
