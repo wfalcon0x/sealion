@@ -656,12 +656,12 @@ export type Type =
 export type AnyNode = Expression | Statement | Declaration | Type | Program
 
 export type SimpleVisitors<TState> = {
-  [type in AnyNode['Type']]?: (node: Extract<AnyNode, { type: type }>, state: TState) => void
+  [type in AnyNode['Type']]?: (node: Extract<AnyNode, { Type: type }>, state: TState) => void
 }
 
 export type RecursiveVisitors<TState> = {
   [type in AnyNode['Type']]?: (
-    node: Extract<AnyNode, { type: type }>,
+    node: Extract<AnyNode, { Type: type }>,
     state: TState,
     callback: WalkerCallback<TState>,
   ) => void
