@@ -45,6 +45,7 @@ export enum NodeType {
   PragmaDeclaration = 'PragmaDeclaration',
   ReferenceExpression = 'ReferenceExpression',
   ReferenceType = 'ReferenceType',
+  RemoveStatement = 'RemoveStatement',
   RestrictedType = 'RestrictedType',
   ReturnStatement = 'ReturnStatement',
   SpecialFunctionDeclaration = 'SpecialFunctionDeclaration',
@@ -161,8 +162,8 @@ export interface ArrayExpression extends Node {
 
 export interface AttachExpression extends Node {
   Type:                  NodeType.AttachExpression;
-  Base?:                 Expression;
-  Attachment?:           InvocationExpression;
+  Base:                  Expression;
+  Attachment:            InvocationExpression;
 }
 
 export interface BinaryExpression extends Node {
@@ -389,6 +390,12 @@ export interface IfStatement extends Node {
   Else:     Block | null;
 }
 
+export interface RemoveStatement extends Node {
+  Type:                  NodeType.RemoveStatement;
+  Attachment:            NominalType;
+  Value:                 Expression;
+}
+
 export interface ReturnStatement extends Node {
   Type:                  NodeType.ReturnStatement;
   Expression:            Expression | null;
@@ -611,6 +618,7 @@ export type Statement =
   | ExpressionStatement
   | ForStatement
   | IfStatement
+  | RemoveStatement
   | ReturnStatement
   | SwapStatement
   | SwitchStatement
