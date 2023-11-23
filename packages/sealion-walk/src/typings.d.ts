@@ -598,17 +598,17 @@ export interface VariableSizedType {
 }
 
 export type Declaration =
-| AttachmentDeclaration
-| CompositeDeclaration
-| EnumCaseDeclaration
-| FieldDeclaration
-| FunctionDeclaration
-| ImportDeclaration
-| InterfaceDeclaration
-| PragmaDeclaration
-| SpecialFunctionDeclaration
-| TransactionDeclaration
-| VariableDeclaration
+  | AttachmentDeclaration
+  | CompositeDeclaration
+  | EnumCaseDeclaration
+  | FieldDeclaration
+  | FunctionDeclaration
+  | ImportDeclaration
+  | InterfaceDeclaration
+  | PragmaDeclaration
+  | SpecialFunctionDeclaration
+  | TransactionDeclaration
+  | VariableDeclaration
 
 export type Statement =
   | AssignmentStatement
@@ -661,7 +661,7 @@ export type Type =
   | RestrictedType
   | VariableSizedType
 
-export type AnyNode = Expression | Statement | Declaration | Type | Program
+export type AnyNode = Expression | Statement | Declaration | Type | Program | Block | FunctionBlock
 
 export type SimpleVisitors<TState> = {
   [type in AnyNode['Type']]?: (node: Extract<AnyNode, { Type: type }>, state: TState) => void
@@ -675,7 +675,25 @@ export type RecursiveVisitors<TState> = {
   ) => void
 }
 
-export type WalkerCallback<TState> = (node: Node, state: TState) => void
+export type WalkerCallback<TState> = (node: Node, state: TState, override?: string) => void
+
+export interface NodeAttributeType {
+  Argument: Argument;
+  Condition: Condition;
+  DictionaryEntry: DictionaryEntry;
+  Members: Members;
+  Parameter: Parameter;
+  ParameterList: ParameterList;
+  TypeAnnotation: TypeAnnotation;
+}
+
+export type NodeAttributeHelpers<TState> = Required<{
+  [type in keyof NodeAttributeType]?: (
+    node: NodeAttributeType[type],
+    state: TState,
+    callback: WalkerCallback<TState>,
+  ) => void
+}>
 
 /**
  * does a 'simple' walk over a tree
@@ -692,3 +710,5 @@ export function simple<TState>(
 ): void
 
 export const base: RecursiveVisitors<any>
+
+export const helper: NodeAttributeHelpers<any>
