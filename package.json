@@ -11,13 +11,13 @@
     "clean": "lerna run clean --parallel",
     "lint": "eslint --ext .js,.ts .",
     "lint:fix": "eslint --ext .js,.ts . --quiet --fix",
-    "release": "lerna publish from-package",
+    "release": "lerna publish",
     "prettify:packages": "lerna exec -- sort-package-json && sort-package-json",
     "prettify": "run-s prettify:*",
     "test": "lerna run test --stream",
     "verify": "lerna run verify --parallel",
     "lint-staged": "lint-staged",
-    "publish-all": "lerna publish from-package"
+    "publish-all": "lerna publish"
   },
   "commitlint": {
     "extends": [
